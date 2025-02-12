@@ -42,12 +42,15 @@ public class Album {
 
     }
 
-    public boolean addToPlayList(String titulo, LinkedList<Integer> playList) {
+    public boolean addToPlayList(String titulo, LinkedList<Cancion> playList) {
         if (findSong(titulo) != null) {
-            playList.add(canciones.indexOf(findSong(titulo)));
+            playList.add(canciones.get(canciones.indexOf(findSong(titulo))));
+            return  true;
+
+        }else {
+            return false;
         }
 
-       return  true;
     }
 
 }
